@@ -1,0 +1,19 @@
+h1 {
+  color: rebeccapurple;
+  text-decoration: underline;
+  text-align: center;
+  padding-top: 1px;
+}
+.container {
+  border-radius: 30px;
+  border: 15px solid coral;
+}
+
+.data {
+  padding-top: 70px;
+}
+
+.weather-temperature {
+  color: gray;
+  text-align: center;
+}
