@@ -7,7 +7,7 @@ function formatDate(timestamp) {
     let minutes = date.getMinutes();
    
      if (minutes < 10){
-        minutes = `0${munutes}`;
+        minutes = `0${muinutes}`;
      }
     let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday","Saturday"];
     let day = days[date.getDay()];
@@ -16,6 +16,7 @@ function formatDate(timestamp) {
 
 
 function displayTemperature (response) {
+  console.log(response.data);
     let temperatureElement = document.querySelector("#temperature");
     let cityElement = document.querySelector("#city");
     let descriptionElement = document.querySelector("#description");
@@ -85,5 +86,5 @@ let celsiuslink = document.querySelector("#celsius-link");
 celsiuslink.addEventListener("click", displaycelsiusTemperature);
 
 
-search("New York")
+search("London")
 

@@ -68,3 +68,18 @@ p {
 h2 {
   color: #1a73e8;
 }
+
+.columnleft {
+  width: 10%;
+  float: left;
+  padding: 10px;
+  height: 300px;
+}
+
+.columnright {
+  width: 75%;
+  width: 10%;
+  float: right;
+  padding: 10px;
+  height: 300px;
+}
