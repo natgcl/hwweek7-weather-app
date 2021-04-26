@@ -5,6 +5,9 @@
   border: 5px solid coral;
   border-radius: 20px;
 }
+.search-form {
+  color: #325288;
+}
 
 .overview {
   margin-bottom: 20px;
@@ -66,20 +69,11 @@ p {
   color: gray;
 }
 h2 {
-  color: #1a73e8;
+  color: #325288;
+  font-size: 10px;
 }
 
-.columnleft {
-  width: 10%;
-  float: left;
-  padding: 10px;
-  height: 300px;
-}
-
-.columnright {
-  width: 75%;
-  width: 10%;
-  float: right;
-  padding: 10px;
-  height: 300px;
+.newspaper {
+  column-count: 2;
+  width: 500px;
 }

@@ -18,9 +18,14 @@
         <div class="weather-app">
             <form id="search-form">
                 <div class="row">
+                <div class="row">
                     <div class="col-9">
-                        <input type="search" placeholder="Type a city..." class="form-control" id="city-input">
+                        <input type="search" 
+                        placeholder="Type a city..." 
+                        class="form-control"
+                         id="city-input">
                         <input type="submit">
+                    </div>
             </form>
               <h1 id="city"></h1>
         <ul>
@@ -34,7 +39,7 @@
                 <li>
                     Humidity <span id="humidity"></span>%</li>
                 <li>
-                    Wind <span id="wind"></span>2km/h</li>
+                    Wind <span id="Wind"></span>2km/h</li>
             </ul>
         </div>
             <div class="row">
@@ -47,93 +52,103 @@
                         id="fahrenheit-link">Fº</a></span>
             </div>
             <div class="container">
-<div class="container">
-    <div class="row">
-        <div class="col-20">
-            <li class="forecastday"><h2>Mon</h2></li>
-            <li class="forecasticon"><img src="http://openweathermap.org/img/wn/04d@2x.png"> <p><br> ClAUDY </br></p></li>
-            <li class="forecasttemp">10|20</li>
-                <hr></hr>
-        </div>
-        <div class="col-20">
-            <li class="forecastday"> <h2>TUE</h2></li>
-            <li class="forecasticon"><img src="http://openweathermap.org/img/wn/10d@2x.png">
-                <p><br> RAINY </br></p> </li>
-            <li class="forecasttemp">20|25</li>
-
-            <hr> </hr>
-    
-        </div>
-    </div>
-    
-    <div class="row">
-        <div class="col-20">
-        <li class="forecastday"> <h2>WED</h2></li>
-        <li class="forecasticon"><img src="http://openweathermap.org/img/wn/01d@2x.png">
-            <p><br> SUNNY </br></p></li>
-        <li class="forecasttemp">30|35</li>
-        </div>
-    <hr></hr>
-    <div class="row">
-        <div class="col-20">
-        <li class="forecastday">
-            <h2>THU</h2>
-        </li>
-        <li class="forecasticon"><img src="http://openweathermap.org/img/wn/01d@2x.png">
-            <p><br> SUNNY </br></p>
-            <li class="forecasttemp">30|35</li>
-            <hr> </hr>
-        </div>
-        <div class="col-20">
-            <li class="forecastday">
-            </li></li><h2>Fri</h2>
-            <li class="forecasticon"><img src="http://openweathermap.org/img/wn/11n@2x.png">
-                <p><br> THUNDERSTORM </br></p>
-            </li>
-            <li class="forecasttemp">10|15</li>
-            <hr></hr>
 
         
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-20">
-        <li class="forecastday"></li>
-     </li><h2>SAT</h2>
-    <li class="forecasticon"><img src="http://openweathermap.org/img/wn/10d@2x.png">
-        <p><br> RAINY </br></p>
-        </li>
-        <li class="forecasttemp">10|15</li>
-        <hr>
-        </hr>
-
-        </div>
-        <div class="col-20">
-        <li class="forecastday"></li>
-        </li>
-        <h2>SAT</h2>
-        <li class="forecasticon"><img src="http://openweathermap.org/img/wn/01d@2x.png">
-            <p><br> SUNNY </br></p>
-        </li>
-        <li class="forecasttemp">10|15</li>
-        <hr>
-        </hr>
-        </div>
-    </div>
-</div>
         
-        <h2>Two Unequal Columns</h2>
-        
-        <div class="row">
-            <div class="column left" style="background-color:#aaa;">
-                <h2>Column 1</h2>
-                <p>Some text..</p>
-            </div>
-            <div class="column right" style="background-color:#bbb;">
-                <h2>Column 2</h2>
-                <p>Some text..</p>
-            </div>
+        <div class="newspaper">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-20">
+                            <li class="forecastday">
+                                <h2>Mon</h2>
+                            </li>
+                            <li class="forecasticon"><img src="http://openweathermap.org/img/wn/04d@2x.png">
+                                <p><br> ClAUDY </br></p>
+                            </li>
+                            <li class="forecasttemp">10|20</li>
+                            <hr>
+                            </hr>
+                        </div>
+                        <div class="col-20">
+                            <li class="forecastday">
+                                <h2>TUE</h2>
+                            </li>
+                            <li class="forecasticon"><img src="http://openweathermap.org/img/wn/10d@2x.png">
+                                <p><br> RAINY </br></p>
+                            </li>
+                            <li class="forecasttemp">20|25</li>
+                
+                            <hr>
+                            </hr>
+                
+                        </div>
+                    </div>
+                
+                    <div class="row">
+                        <div class="col-20">
+                            <li class="forecastday">
+                                <h2>WED</h2>
+                            </li>
+                            <li class="forecasticon"><img src="http://openweathermap.org/img/wn/01d@2x.png">
+                                <p><br> SUNNY </br></p>
+                            </li>
+                            <li class="forecasttemp">30|35</li>
+                        </div>
+                        <hr>
+                        </hr>
+                <div class="row">
+                    <div class="col-20">
+                        <li class="forecastday">
+                            <h2>THU</h2>
+                        </li>
+                        <li class="forecasticon"><img src="http://openweathermap.org/img/wn/01d@2x.png">
+                            <p><br> SUNNY </br></p>
+                        <li class="forecasttemp">30|35</li>
+                        <hr>
+                        </hr>
+                    </div>
+                    <div class="col-20">
+                        <li class="forecastday">
+                        </li>
+                        </li>
+                        <h2>Fri</h2>
+                        <li class="forecasticon"><img src="http://openweathermap.org/img/wn/11n@2x.png">
+                            <p><br> THUNDERSTORM </br></p>
+                        </li>
+                        <li class="forecasttemp">10|15</li>
+                        <hr>
+                        </hr>
+                
+                
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-20">
+                        <li class="forecastday"></li>
+                        </li>
+                        <h2>SAT</h2>
+                        <li class="forecasticon"><img src="http://openweathermap.org/img/wn/10d@2x.png">
+                            <p><br> RAINY </br></p>
+                        </li>
+                        <li class="forecasttemp">10|15</li>
+                        <hr>
+                        </hr>
+                
+                    </div>
+                    <div class="col-20">
+                        <li class="forecastday"></li>
+                        </li>
+                        <h2>SUN</h2>
+                        <li class="forecasticon"><img src="http://openweathermap.org/img/wn/01d@2x.png">
+                            <p><br> SUNNY </br></p>
+                        </li>
+                        <li class="forecasttemp">10|15</li>
+                        <hr>
+                        </hr>
+                    </div>
+                </div>
         </div>
+        
       
         <small>
             <a href="https://github.com/natgcl/vainilla-weather-app" target="_blank">
