@@ -17,134 +17,40 @@ function formatDate(timestamp) {
 
 function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
-
- let forecastHTML = `<div class=columns>`;
- let days = ["Thu", "Fri", "Sat", "Sun"];
- days.forEach(function(day){
-
- })
-
-forecastHTML =
-  forecastHTML = forecastHTML + `
-  <div class="row">
-                <div class="col-6">
-                    <ul>
-                        <li class="forecastday">
-                            <h2>Mon</h2>
-                        </li>
-                        <li class="forecasticon" >
-                            <img src="http://openweathermap.org/img/wn/04d@2x.png" />
-                            <p>
-                                <br />
-                                ClAUDY <br />
-                            </p>
-                        </li>
-                        <li class="forecasttemp">10|20</li>
-                    </ul>
-                    <hr />
-                </div>
-                <div class="col-6">
-                    <ul>
-                        <li class="forecastday">
-                            <h2>TUE</h2>
-                        </li>
-                        <li class="forecasticon">
-                            <img src="http://openweathermap.org/img/wn/10d@2x.png" />
-                            <p>
-                                <br />
-                                RAINY <br />
-                            </p>
-                        </li>
-                        <li class="forecasttemp">20|25</li>
-                    </ul>
-                    <hr />
-                </div>
-                <div class="col-6">
-                    <ul>
-                        <li class="forecastday">
-                            <h2>WED</h2>
-                        </li>
-                        <li class="forecasticon">
-                            <img src="http://openweathermap.org/img/wn/01d@2x.png" />
-                            <p>
-                                <br />
-                                SUNNY <br />
-                            </p>
-                        </li>
-                        <li class="forecasttemp">30|35</li>
-                    </ul>
-                    <hr />
-                </div>
-                <div class="col-6">
-                    <ul>
-                        <li class="forecastday">
-                            <h2>THU</h2>
-                        </li>
-                        <li class="forecasticon">
-                            <img src="http://openweathermap.org/img/wn/01d@2x.png" />
-                            <p>
-                                <br />
-                                SUNNY <br />
-                            </p>
-                        </li>
-                        <li class="forecasttemp">30|35</li>
-                    </ul>
-                    <hr />
-                </div>
-                <div class="col-6">
-                    <ul>
-                        <li class="forecastday">
-                            <h2>Fri</h2>
-                        </li>
-                        <li class="forecasticon">
-                            <img src="http://openweathermap.org/img/wn/11n@2x.png" />
-                            <p>
-                                <br />
-                                THUNDERSTORM <br />
-                            </p>
-                        </li>
-                        <li class="forecasttemp">10|15</li>
-                    </ul>
-                    <hr />
-                </div>
-                <div class="col-6">
-                    <ul>
-                        <li class="forecastday">
-                            <h2>SAT</h2>
-                        </li>
-                        <li class="forecasticon">
-                            <img src="http://openweathermap.org/img/wn/10d@2x.png" />
-                            <p>
-                                <br />
-                                RAINY <br />
-                            </p>
-                        </li>
-                        <li class="forecasttemp">10|15</li>
-                    </ul>
-                    <hr />
-                </div>
-                <div class="col-6">
-                    <ul>
-                        <li class="forecastday">
-                            <h2>SUN</h2>
-                        </li>
-                        <li class="forecasticon">
-                            <img src="http://openweathermap.org/img/wn/01d@2x.png" />
-                            <p>
-                                <br />
-                                SUNNY <br />
-                            </p>
-                        </li>
-                        <li class="forecasttemp">10|15</li>
-                    </ul>
-                    <hr />
-                </div>
-            </div>
-            `;
-     forecastHTML = forecastHTML+ `</div>`;      
-
+  let forecastHTML = `<div class="row">`;
+  let days = ["Mon", "Tue", "Wed","Thu","Fri", "Sat", "Sun"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-6">
+            <ul>
+                <li class="forecastday">
+                    <h2>${day}</h2>
+                </li>
+                <li class="forecasticon" >
+                    <img src="http://openweathermap.org/img/wn/04d@2x.png" />
+                    <p>
+                        <br />
+                        ClAUDY <br />
+                    </p>
+                </li>
+                <li class="forecasttemp">10|20</li>
+            </ul>
+            <hr />
+        </div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
+
+function getForecast(coordinates){
+  console.log(coordinates);
+  let apiKey = "005492bbca20a72f226defd2b2fda6d2";
+  apiUrl= `https://api.openweathermap.org/data/2.5/onecall?
+  lat=#{coordinates.lat}&lon={lon}&appid=${apiKey}`
+}
+
+
 function displayTemperature (response) {
   console.log(response.data);
     let temperatureElement = document.querySelector("#temperature");
@@ -156,6 +62,7 @@ function displayTemperature (response) {
     let iconElement = document.querySelector("#icon");
 
     
+    windElement.innerHTML = response.data.wind.speed;
 
     celsiusTemperature = response.data.main.temp;
 
@@ -168,6 +75,8 @@ function displayTemperature (response) {
     iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`) 
     iconElement.setAttribute ("alt", response.data.weather[0].description);
 
+
+    getForecast(response.data.coord)
 }
 
 
@@ -177,6 +86,8 @@ let apiUrl = `https://api.openweathermap.org/data/2.5/weather?
 q=${city}&appid=${apiKey}&units=metric`; 
 axios.get(apiUrl).then(displayTemperature); 
 }
+
+
 
 
 
