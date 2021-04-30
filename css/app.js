@@ -18,7 +18,132 @@ function formatDate(timestamp) {
 function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
 
-  forecastElement.innerHTML = "hello";
+ let forecastHTML = `<div class=columns>`;
+ let days = ["Thu", "Fri", "Sat", "Sun"];
+ days.forEach(function(day){
+
+ })
+
+forecastHTML =
+  forecastHTML = forecastHTML + `
+  <div class="row">
+                <div class="col-6">
+                    <ul>
+                        <li class="forecastday">
+                            <h2>Mon</h2>
+                        </li>
+                        <li class="forecasticon" >
+                            <img src="http://openweathermap.org/img/wn/04d@2x.png" />
+                            <p>
+                                <br />
+                                ClAUDY <br />
+                            </p>
+                        </li>
+                        <li class="forecasttemp">10|20</li>
+                    </ul>
+                    <hr />
+                </div>
+                <div class="col-6">
+                    <ul>
+                        <li class="forecastday">
+                            <h2>TUE</h2>
+                        </li>
+                        <li class="forecasticon">
+                            <img src="http://openweathermap.org/img/wn/10d@2x.png" />
+                            <p>
+                                <br />
+                                RAINY <br />
+                            </p>
+                        </li>
+                        <li class="forecasttemp">20|25</li>
+                    </ul>
+                    <hr />
+                </div>
+                <div class="col-6">
+                    <ul>
+                        <li class="forecastday">
+                            <h2>WED</h2>
+                        </li>
+                        <li class="forecasticon">
+                            <img src="http://openweathermap.org/img/wn/01d@2x.png" />
+                            <p>
+                                <br />
+                                SUNNY <br />
+                            </p>
+                        </li>
+                        <li class="forecasttemp">30|35</li>
+                    </ul>
+                    <hr />
+                </div>
+                <div class="col-6">
+                    <ul>
+                        <li class="forecastday">
+                            <h2>THU</h2>
+                        </li>
+                        <li class="forecasticon">
+                            <img src="http://openweathermap.org/img/wn/01d@2x.png" />
+                            <p>
+                                <br />
+                                SUNNY <br />
+                            </p>
+                        </li>
+                        <li class="forecasttemp">30|35</li>
+                    </ul>
+                    <hr />
+                </div>
+                <div class="col-6">
+                    <ul>
+                        <li class="forecastday">
+                            <h2>Fri</h2>
+                        </li>
+                        <li class="forecasticon">
+                            <img src="http://openweathermap.org/img/wn/11n@2x.png" />
+                            <p>
+                                <br />
+                                THUNDERSTORM <br />
+                            </p>
+                        </li>
+                        <li class="forecasttemp">10|15</li>
+                    </ul>
+                    <hr />
+                </div>
+                <div class="col-6">
+                    <ul>
+                        <li class="forecastday">
+                            <h2>SAT</h2>
+                        </li>
+                        <li class="forecasticon">
+                            <img src="http://openweathermap.org/img/wn/10d@2x.png" />
+                            <p>
+                                <br />
+                                RAINY <br />
+                            </p>
+                        </li>
+                        <li class="forecasttemp">10|15</li>
+                    </ul>
+                    <hr />
+                </div>
+                <div class="col-6">
+                    <ul>
+                        <li class="forecastday">
+                            <h2>SUN</h2>
+                        </li>
+                        <li class="forecasticon">
+                            <img src="http://openweathermap.org/img/wn/01d@2x.png" />
+                            <p>
+                                <br />
+                                SUNNY <br />
+                            </p>
+                        </li>
+                        <li class="forecasttemp">10|15</li>
+                    </ul>
+                    <hr />
+                </div>
+            </div>
+            `;
+     forecastHTML = forecastHTML+ `</div>`;      
+
+  forecastElement.innerHTML = forecastHTML;
 }
 function displayTemperature (response) {
   console.log(response.data);
