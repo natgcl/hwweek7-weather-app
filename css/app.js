@@ -15,6 +15,11 @@ function formatDate(timestamp) {
 }
 
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  forecastElement.innerHTML = "hello";
+}
 function displayTemperature (response) {
   console.log(response.data);
     let temperatureElement = document.querySelector("#temperature");
@@ -24,6 +29,8 @@ function displayTemperature (response) {
     let windElement = document.querySelector("#wind");
     let dateElement = document.querySelector("#date");
     let iconElement = document.querySelector("#icon");
+
+    
 
     celsiusTemperature = response.data.main.temp;
 
@@ -37,7 +44,6 @@ function displayTemperature (response) {
     iconElement.setAttribute ("alt", response.data.weather[0].description);
 
 }
-
 
 
 function search(city){
@@ -87,4 +93,6 @@ celsiuslink.addEventListener("click", displaycelsiusTemperature);
 
 
 search("London")
+displayForecast();
+
 
