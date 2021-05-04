@@ -7,7 +7,7 @@ function formatDate(timestamp) {
     let minutes = date.getMinutes();
    
      if (minutes < 10){
-        minutes = `0${muinutes}`;
+        minutes = `0${minutes}`;
      }
     let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday","Saturday"];
     let day = days[date.getDay()];
@@ -15,29 +15,37 @@ function formatDate(timestamp) {
 }
 
 
-function displayForecast() {
+
+
+function displayForecast(response) {
+  console.log(response.data.daily);
+  
   let forecastElement = document.querySelector("#forecast");
-  let forecastHTML = `<div class="row">`;
+  
   let days = ["Mon", "Tue", "Wed","Thu","Fri", "Sat", "Sun"];
+  
+  let forecastHTML = `<div class="row">`;
+  
+  
   days.forEach(function (day) {
     forecastHTML =
-      forecastHTML +
-      `<div class="col-6">
-            <ul>
-                <li class="forecastday">
-                    <h2>${day}</h2>
-                </li>
-                <li class="forecasticon" >
-                    <img src="http://openweathermap.org/img/wn/04d@2x.png" />
-                    <p>
-                        <br />
-                        ClAUDY <br />
-                    </p>
-                </li>
-                <li class="forecasttemp">10|20</li>
-            </ul>
-            <hr />
-        </div>`;
+    forecastHTML +
+    `<div class="col-6">
+    <ul>
+    <li class="forecastday">
+    <h2>${day}</h2>
+    </li>
+    <li class="forecasticon" >
+    <img src="http://openweathermap.org/img/wn/04d@2x.png" />
+    <p>
+    <br />
+    ClAUDY <br />
+    </p>
+    </li>
+    <li class="forecasttemp">10|20</li>
+    </ul>
+    <hr />
+    </div>`;
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
@@ -52,7 +60,6 @@ function getForecast(coordinates){
 
 
 function displayTemperature (response) {
-  console.log(response.data);
     let temperatureElement = document.querySelector("#temperature");
     let cityElement = document.querySelector("#city");
     let descriptionElement = document.querySelector("#description");
@@ -129,6 +136,7 @@ celsiuslink.addEventListener("click", displaycelsiusTemperature);
 
 
 search("London")
-displayForecast();
+
+
 
 
