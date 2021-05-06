@@ -16,11 +16,10 @@ function formatDate(timestamp) {
 
 
 
-function formatDay(timestamp) {
+function formatDate(timestamp){
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
   return days[day];
 }
 function displayForecast(response) {
@@ -33,12 +32,7 @@ let forecast = response.data.daily;
   let forecastHTML = `<div class="row">`;
   
 
-  forecast.forEach(function (forecastDay, index) {
-    if (index < 6) 
-
-   
-   
-  
+  forecast.forEach(function (forecastDay) {
     forecastHTML =
     forecastHTML +
     `<div class="col-6">
@@ -53,16 +47,15 @@ let forecast = response.data.daily;
     ClAUDY <br />
     </p>
     </li>
-    <li class="forecasttemp">${Math.round(forecastDay.temp.max)}|${Math.round(forecastDay.temp.min)}</li>
+    <li class="forecasttemp">${forecastDay.temp.max}|${forecastDay.temp.max}</li>
     </ul>
     <hr />
     </div>`;
-  }); 
-  
-
+  });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
+
 function getForecast(coordinates) {
   console.log(coordinates);
   let apiKey = "005492bbca20a72f226defd2b2fda6d2";
